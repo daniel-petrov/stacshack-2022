@@ -1,6 +1,4 @@
-﻿namespace DefaultNamespace;
-
-public class Motivation
+﻿public class Motivation
 {
     /* -- Attributes -- */
     
