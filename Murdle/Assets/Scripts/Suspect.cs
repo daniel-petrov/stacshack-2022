@@ -1,7 +1,10 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class Suspect : MonoBehaviour{
+public class Suspect : MonoBehaviour
+{
     
     /* -- Suspect Attributes -- */
 

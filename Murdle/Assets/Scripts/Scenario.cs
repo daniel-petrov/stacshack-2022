@@ -7,7 +7,7 @@ public class Scenario
     public List<Suspect> suspects;
     public List<Motivation> motivations;
 
-    public Scenario(List<Weapon> weapons, List<Suspect> suspect, List<Motivation> motivations)
+    public Scenario(List<Weapon> weapons, List<Suspect> suspects, List<Motivation> motivations)
     {
         this.weapons = weapons;
         this.suspects = suspects;
