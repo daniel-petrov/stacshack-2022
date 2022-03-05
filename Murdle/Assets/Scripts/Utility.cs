@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 
-namespace DefaultNamespace;
-
 public class Utility
 {
     
@@ -36,10 +34,64 @@ public class Utility
 
         return weaponList;
     }
-
-    public List<Object[]> getSuspectPropertiesFromCSV(string filename)
+    
+    /**
+     * Extracts Suspect Information from a Specified .csv File
+     *
+     * Returns List of Tuples of Form: (...)
+     */
+    public static List<Suspect> getSuspectsFromCSV(string filename)
     {
-        return null;
+        List<Suspect> suspectList = new List<Suspect>();
+        
+        using(var reader = new StreamReader(filename))
+        {
+            while (!reader.EndOfStream)
+            {
+                var line = reader.ReadLine();
+                var values = line.Split(',');
+                
+                // Create New Weapon Object from CSV Properties
+                Suspect suspect = new Suspect();
+
+                suspectList.add(suspect);
+            }
+        }
+
+        return suspectList;
     }
+    
+    
+    /**
+     * Extracts Motivation Information from a Specified .csv File
+     *
+     * Returns List of Tuples of Form: (...)
+     */
+    public static List<Motivation> getMotivationsFromCSV(string filename)
+    {
+        List<Motivation> motivationList = new List<Motivation>();
+        
+        using(var reader = new StreamReader(filename))
+        {
+            while (!reader.EndOfStream)
+            {
+                var line = reader.ReadLine();
+                var values = line.Split(',');
+                
+                // Create New Motivation Object from CSV Properties
+                Motivation motivation = new Motivation();
+
+                motivationList.add(motivation);
+            }
+        }
+
+        return motivationList;
+    }
+
+    public List<Object> getSubsetOf(List<Object> objectList, int maxSize)
+    {
+        return objectList;
+    }
+    
     
 }
