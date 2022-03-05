@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using static System.Convert;
 
 public class Utility
 {
@@ -28,7 +29,7 @@ public class Utility
                     ToDouble(values[4])
                 );
 
-                weaponList.add(weapon);
+                weaponList.Add(weapon);
             }
         }
 
@@ -54,7 +55,7 @@ public class Utility
                 // Create New Weapon Object from CSV Properties
                 Suspect suspect = new Suspect();
 
-                suspectList.add(suspect);
+                suspectList.Add(suspect);
             }
         }
 
@@ -81,14 +82,14 @@ public class Utility
                 // Create New Motivation Object from CSV Properties
                 Motivation motivation = new Motivation();
 
-                motivationList.add(motivation);
+                motivationList.Add(motivation);
             }
         }
 
         return motivationList;
     }
 
-    public List<Object> getSubsetOf(List<Object> objectList, int maxSize)
+    public List<object> getSubsetOf(List<object> objectList, int maxSize)
     {
         return objectList;
     }

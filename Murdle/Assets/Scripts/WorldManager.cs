@@ -36,9 +36,9 @@ public class WorldManager : MonoBehaviour {
         List<Motivation> allMotivations = Utility.getMotivationsFromCSV(motivationsFile);
         
         // -- Get Subset of All Scenario Objects -- //
-        List<Weapon> weaponList = Utility.getSubsetOf(allWeapons);
-        List<Suspect> suspectList = Utility.getSubsetOf(allSuspects);
-        List<Motivation> motivationList = Utility.getSubsetOf(allMotivations);
+        List<object> weaponList = Utility.getSubsetOf(allWeapons, 100);
+        List<object> suspectList = Utility.getSubsetOf(allSuspects);
+        List<object> motivationList = Utility.getSubsetOf(allMotivations);
 
         return new Scenario(weaponList, suspectList, motivationList);
     }
