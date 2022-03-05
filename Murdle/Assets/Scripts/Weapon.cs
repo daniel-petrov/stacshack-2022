@@ -3,20 +3,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-namespace DefaultNamespace;
-
 public class Weapon : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDropHandler
 {
     
     /* -- Weapon Attributes -- */
+    public string imageName;
     public double effectiveness;
     public double mass;
     public double activeness;
     public double sharpness;
     
     /* -- Default Constructor -- */
-    public Weapon(double effectiveness, double mass, double activeness, double sharpness)
+    public Weapon(string imageName, double effectiveness, double mass, double activeness, double sharpness)
     {
+        this.imageName = imageName;
         this.effectiveness = effectiveness;
         this.activeness = activeness;
         this.sharpness = sharpness;
@@ -40,6 +40,6 @@ public class Weapon : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEn
     }
     
     /* -- Unity Methods -- */
-    public void 
+    
     
 }
