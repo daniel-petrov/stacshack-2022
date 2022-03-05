@@ -1,7 +1,5 @@
 ﻿using System;
 
-namespace DefaultNamespace;
-
 public class Weapon
 {
     
