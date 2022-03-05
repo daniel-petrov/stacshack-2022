@@ -1,12 +1,21 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Motivation : MonoBehaviour {
-    /* -- Attributes -- */
     
+    /* -- Attributes -- */
+    public string imageName;
+    public double scale;
+    public string emotion;
+    public string message;
+
     /* -- Default Contructor -- */
-    public Motivation()
+    public Motivation(string imageName, double scale, string emotion, string message)
     {
-        
+        this.imageName = imageName;
+        this.scale = scale;
+        this.emotion = emotion;
+        this.message = message;
     }
     
     public void Copy(Motivation motivation) {
@@ -18,7 +27,7 @@ public class Motivation : MonoBehaviour {
      */
     public double getDistance(Motivation motiv)
     {
-        return 0;
+        return Math.Abs(this.scale - motiv.scale);
     }
 
 }

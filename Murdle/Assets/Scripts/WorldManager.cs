@@ -49,7 +49,7 @@ public class WorldManager : MonoBehaviour {
 
     private Scenario GenerateScenario() {
         string weaponsFile = BasePath + "weapon_attributes.csv";
-        string suspectsFile = "";
+        string suspectsFile = "suspect_attributes.csv";
         string motivationsFile = BasePath + "motivations_messages.csv";
     
         // -- Get List of All Possible Scenario Objects -- //

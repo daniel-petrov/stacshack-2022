@@ -65,7 +65,12 @@ public class Utility
                 }
                 
                 // Create New Weapon Object from CSV Properties
-                Suspect suspect = new Suspect();
+                Suspect suspect = new Suspect(
+                    values[0],
+                    ToDouble(values[1]),
+                    ToDouble(values[2]),
+                    ToDouble(values[3])
+                );
 
                 suspectList.Add(suspect);
             }
@@ -98,7 +103,12 @@ public class Utility
                 }
                 
                 // Create New Motivation Object from CSV Properties
-                Motivation motivation = new Motivation();
+                Motivation motivation = new Motivation(
+                    "002-analysis.png",
+                    ToDouble(values[0]),
+                    values[1],
+                    values[2]
+                );
 
                 motivationList.Add(motivation);
             }
