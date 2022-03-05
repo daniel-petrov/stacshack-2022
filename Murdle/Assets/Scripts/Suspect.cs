@@ -1,7 +1,7 @@
 ﻿using System;
+using UnityEngine;
 
-public class Suspect
-{
+public class Suspect : MonoBehaviour{
     
     /* -- Suspect Attributes -- */
 
@@ -9,6 +9,10 @@ public class Suspect
     public Suspect()
     {
 
+    }
+
+    public void Copy(Suspect suspect) {
+        // TODO copy all attributes from suspect to this object
     }
 
     /*

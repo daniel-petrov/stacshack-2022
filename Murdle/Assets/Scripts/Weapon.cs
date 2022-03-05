@@ -3,8 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Weapon : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDropHandler
-{
+public class Weapon : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDropHandler {
     
     /* -- Weapon Attributes -- */
     public string imageName;
@@ -21,6 +20,14 @@ public class Weapon : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEn
         this.activeness = activeness;
         this.sharpness = sharpness;
         this.mass = mass;
+    }
+    
+    public void Copy(Weapon weapon) {
+        imageName = weapon.imageName;
+        effectiveness = weapon.effectiveness;
+        activeness = weapon.activeness;
+        sharpness = weapon.sharpness;
+        mass = weapon.mass;
     }
 
     /*
@@ -40,6 +47,21 @@ public class Weapon : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEn
     }
     
     /* -- Unity Methods -- */
-    
-    
+
+
+    public void OnPointerDown(PointerEventData eventData) {
+        // throw new NotImplementedException();
+    }
+
+    public void OnBeginDrag(PointerEventData eventData) {
+        // throw new NotImplementedException();
+    }
+
+    public void OnEndDrag(PointerEventData eventData) {
+        // throw new NotImplementedException();
+    }
+
+    public void OnDrop(PointerEventData eventData) {
+        // throw new NotImplementedException();
+    }
 }
