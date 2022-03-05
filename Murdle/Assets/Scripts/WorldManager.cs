@@ -12,9 +12,10 @@ public class WorldManager : MonoBehaviour {
     public Transform sceneTransform;
 
     public int numWeapons = 20;
-    public int numSuspects = 5;
+    public int numSuspects = 0;
     public int numMotivations = 5;
-    
+
+    private const string BasePath = "assets/images_and_stuff/"; 
     
     private void Start() {
         Scenario scenario = GenerateScenario();
@@ -47,13 +48,13 @@ public class WorldManager : MonoBehaviour {
     }
 
     private Scenario GenerateScenario() {
-        string weaponsFile = "";
+        string weaponsFile = BasePath + "weapon_attributes.csv";
         string suspectsFile = "";
-        string motivationsFile = "";
+        string motivationsFile = BasePath + "motivations_messages.csv";
     
         // -- Get List of All Possible Scenario Objects -- //
         List<Weapon> allWeapons = Utility.getWeaponsFromCSV(weaponsFile);
-        List<Suspect> allSuspects = Utility.getSuspectsFromCSV(suspectsFile);
+        List<Suspect> allSuspects = new List<Suspect>();
         List<Motivation> allMotivations = Utility.getMotivationsFromCSV(motivationsFile);
         
         // -- Get Subset of All Scenario Objects -- //

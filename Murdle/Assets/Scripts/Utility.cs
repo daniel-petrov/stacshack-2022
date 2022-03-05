@@ -13,6 +13,7 @@ public class Utility
     public static List<Weapon> getWeaponsFromCSV(string filename)
     {
         List<Weapon> weaponList = new List<Weapon>();
+        bool ignoreFirstLine = true;
         
         using(var reader = new StreamReader(filename))
         {
@@ -20,6 +21,11 @@ public class Utility
             {
                 var line = reader.ReadLine();
                 var values = line.Split(',');
+
+                if (ignoreFirstLine) {
+                    ignoreFirstLine = false;
+                    continue;
+                }
                 
                 // Create New Weapon Object from CSV Properties
                 Weapon weapon = new Weapon(values[0],
@@ -44,13 +50,19 @@ public class Utility
     public static List<Suspect> getSuspectsFromCSV(string filename)
     {
         List<Suspect> suspectList = new List<Suspect>();
-        
+        bool ignoreFirstLine = true;
+
         using(var reader = new StreamReader(filename))
         {
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
                 var values = line.Split(',');
+
+                if (ignoreFirstLine) {
+                    ignoreFirstLine = false;
+                    continue;
+                }
                 
                 // Create New Weapon Object from CSV Properties
                 Suspect suspect = new Suspect();
@@ -71,13 +83,19 @@ public class Utility
     public static List<Motivation> getMotivationsFromCSV(string filename)
     {
         List<Motivation> motivationList = new List<Motivation>();
-        
+        bool ignoreFirstLine = true;
+
         using(var reader = new StreamReader(filename))
         {
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
                 var values = line.Split(',');
+
+                if (ignoreFirstLine) {
+                    ignoreFirstLine = false;
+                    continue;
+                }
                 
                 // Create New Motivation Object from CSV Properties
                 Motivation motivation = new Motivation();

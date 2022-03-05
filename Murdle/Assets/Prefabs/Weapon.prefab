@@ -86,7 +86,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5465030663089769579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41f8286a6f71323448a19d900e5c69fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d06c0dc60a174fb19be1cc412c79d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   imageName: 
@@ -94,7 +94,6 @@ MonoBehaviour:
   mass: 0
   activeness: 0
   sharpness: 0
-  canvas: {fileID: 0}
 --- !u!225 &-1412759865592196791
 CanvasGroup:
   m_ObjectHideFlags: 0
