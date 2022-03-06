@@ -21,14 +21,18 @@ public class Suspect : MonoBehaviour
         this.skinTan = skinTan;
     }
 
-    public void Copy(Suspect suspect) {
-        // TODO copy all attributes from suspect to this object
+    public void Copy(Suspect suspect)
+    {
+        this.imageName = suspect.imageName;
+        this.eyeColour = suspect.eyeColour;
+        this.hairColour = suspect.hairColour;
+        this.skinTan = suspect.skinTan;
     }
 
     /*
      * Calculate Euclidean Distance between the attributes of this suspect, and another suspect.
      */
-    double getDistance(Suspect suspect)
+    public double getDistance(Suspect suspect)
     {
         double distance = 0.0;
 

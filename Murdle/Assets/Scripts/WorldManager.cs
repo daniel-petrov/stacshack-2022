@@ -13,15 +13,17 @@ public class WorldManager : MonoBehaviour {
     public Transform sceneTransform;
     public RectTransform sceneRect;
 
+    public Scenario scenario;
+
     public int numWeapons = 20;
     public int numSuspects = 0;
     public int numMotivations = 5;
 
-    private const string CSVBasePath = "assets/images_and_stuff/"; 
-    private const string SpriteBasePath = "assets/Sprites/"; 
+    private const string CSVBasePath = "Assets/images_and_stuff/"; 
+    private const string SpriteBasePath = "Assets/Sprites/"; 
     
     private void Start() {
-        Scenario scenario = GenerateScenario();
+        scenario = GenerateScenario();
         
         // TODO select a winning 3-tuple from scenario. So, a (weapon, suspect, motivation) which is the correct answer
         
@@ -58,12 +60,12 @@ public class WorldManager : MonoBehaviour {
 
     private Scenario GenerateScenario() {
         string weaponsFile = CSVBasePath + "weapon_attributes.csv";
-        string suspectsFile = "suspect_attributes.csv";
+        string suspectsFile = CSVBasePath + "suspect_attributes.csv";
         string motivationsFile = CSVBasePath + "motivations_messages.csv";
     
         // -- Get List of All Possible Scenario Objects -- //
         List<Weapon> allWeapons = Utility.getWeaponsFromCSV(weaponsFile);
-        List<Suspect> allSuspects = new List<Suspect>();
+        List<Suspect> allSuspects = Utility.getSuspectsFromCSV(suspectsFile);
         List<Motivation> allMotivations = Utility.getMotivationsFromCSV(motivationsFile);
         
         // -- Get Subset of All Scenario Objects -- //
@@ -118,7 +120,8 @@ public class WorldManager : MonoBehaviour {
             }
         }
         
-        return new Scenario(weaponList, suspectList, motivationList);
+        return new Scenario(weaponList, suspectList, motivationList,
+                            weaponList[0], suspectList[0], motivationList[0]);
     }
 
     private Texture2D getImg(string path) {

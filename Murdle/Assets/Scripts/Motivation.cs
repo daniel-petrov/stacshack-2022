@@ -18,8 +18,12 @@ public class Motivation : MonoBehaviour {
         this.message = message;
     }
     
-    public void Copy(Motivation motivation) {
-        // TODO copy all attributes from motivation to this object
+    public void Copy(Motivation motivation)
+    {
+        this.imageName = motivation.imageName;
+        this.scale = motivation.scale;
+        this.emotion = motivation.emotion;
+        this.message = motivation.message;
     }
     
     /*
