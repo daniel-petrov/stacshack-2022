@@ -43,7 +43,7 @@ public class WorldManager : MonoBehaviour {
             
             Suspect suspectScript = obj.GetComponent<Suspect>();
             suspectScript.Copy(suspect);
-            // obj.GetComponent<RawImage>().texture = getImg(SpriteBasePath + suspectScript.imageName);
+            obj.GetComponent<RawImage>().texture = getImg(SpriteBasePath + suspectScript.imageName);
         }
 
         foreach (var motivation in scenario.motivations) {
@@ -52,7 +52,7 @@ public class WorldManager : MonoBehaviour {
 
             Motivation motivationScript = obj.GetComponent<Motivation>();
             motivationScript.Copy(motivation);
-            // obj.GetComponent<RawImage>().texture = getImg(SpriteBasePath + motivation.imageName);
+            obj.GetComponent<RawImage>().texture = getImg("Assets/images_and_stuff/evidence_png/002-analysis.png");
         }
     }
 
