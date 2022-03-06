@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 3236721651304841939}
   - component: {fileID: -1412759865592196791}
   - component: {fileID: 2268097563991687800}
-  - component: {fileID: 7985866788796823950}
   m_Layer: 5
-  m_Name: Motivation
+  m_Name: Suspect Pic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,19 +85,3 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &7985866788796823950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5465030663089769579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80eb1c74860c5ba49a6ca8ab9a30f19d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imageName: 
-  scale: 0
-  emotion: 
-  message: 

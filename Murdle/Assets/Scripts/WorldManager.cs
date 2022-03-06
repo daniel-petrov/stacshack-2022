@@ -10,17 +10,22 @@ public class WorldManager : MonoBehaviour {
     public GameObject weaponPrefab;
     public GameObject suspectPrefab;
     public GameObject motivationPrefab;
-    public Transform sceneTransform;
+
+    public GameObject suspectPicPrefab;
+
+    public RectTransform suspectsTabRect;
     public RectTransform sceneRect;
 
     public Scenario scenario;
 
     public int numWeapons = 20;
-    public int numSuspects = 0;
+    public int numSuspects = 5;
     public int numMotivations = 5;
 
-    private const string CSVBasePath = "Assets/images_and_stuff/"; 
-    private const string SpriteBasePath = "Assets/Sprites/"; 
+    public int suspectPicPadding = 40;
+
+    private const string CSVBasePath = "assets/images_and_stuff/"; 
+    private const string SpriteBasePath = "assets/Sprites/"; 
     
     private void Start() {
         scenario = GenerateScenario();
@@ -39,17 +44,28 @@ public class WorldManager : MonoBehaviour {
             obj.GetComponent<RawImage>().texture = getImg(SpriteBasePath + weaponScript.imageName);
         }
         
-        foreach (var suspect in scenario.suspects) {
+        for (var index = 0; index < scenario.suspects.Count; index++) {
             GameObject obj = Instantiate(suspectPrefab, sceneRect);
             obj.transform.localPosition = new Vector3(rnd.Next(1, (int) sceneRect.rect.width), rnd.Next(1, (int) sceneRect.rect.height), 0f);
             
             Suspect suspectScript = obj.GetComponent<Suspect>();
-            suspectScript.Copy(suspect);
+            suspectScript.Copy(scenario.suspects[index]);
             obj.GetComponent<RawImage>().texture = getImg(SpriteBasePath + suspectScript.imageName);
+            
+            // Spawn in suspect image in the suspects bar at the top
+            GameObject suspectPicObj = Instantiate(suspectPicPrefab, suspectsTabRect);
+            suspectPicObj.transform.localPosition = new Vector3(
+                (int) Math.Round((suspectsTabRect.rect.width - scenario.suspects.Count * suspectPicPadding) / 2) + index * suspectPicPadding,
+                (int) Math.Round(suspectsTabRect.rect.height / -2), 0f
+            );
+            suspectPicObj.GetComponent<RawImage>().texture = getImg(SpriteBasePath + suspectScript.imageName);
+
+            
+            suspectPicObj.transform.localScale *= 0.75f;
         }
 
         foreach (var motivation in scenario.motivations) {
-            GameObject obj = Instantiate(motivationPrefab, sceneTransform);
+            GameObject obj = Instantiate(motivationPrefab, sceneRect);
             obj.transform.localPosition = new Vector3(rnd.Next(1, (int) sceneRect.rect.width), rnd.Next(1, (int) sceneRect.rect.height), 0f);
 
             Motivation motivationScript = obj.GetComponent<Motivation>();
