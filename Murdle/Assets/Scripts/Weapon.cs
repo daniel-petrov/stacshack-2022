@@ -33,7 +33,7 @@ public class Weapon : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEn
     /*
      * Calculate Euclidean Distance between the attributes of this weapon, and another weapon.
      */
-    double getDistance(Weapon weapon)
+    public double getDistance(Weapon weapon)
     {
         double distance = 0;
 
@@ -51,7 +51,7 @@ public class Weapon : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEn
     
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
-
+    
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
