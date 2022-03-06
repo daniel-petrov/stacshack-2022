@@ -246,7 +246,7 @@ MonoBehaviour:
   sceneTransform: {fileID: 795081568}
   sceneRect: {fileID: 795081568}
   numWeapons: 20
-  numSuspects: 0
+  numSuspects: 5
   numMotivations: 5
 --- !u!4 &1917893606
 Transform:

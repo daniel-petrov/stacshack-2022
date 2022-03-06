@@ -47,7 +47,7 @@ public class Weapon : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEn
     }
 
     /* -- Unity Shtuff -- */
-    public Canvas canvas;
+    private Canvas canvas;
     
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
@@ -56,6 +56,7 @@ public class Weapon : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEn
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+        canvas = GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>();
     }
     
     public void OnBeginDrag(PointerEventData eventData)
