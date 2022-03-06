@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Tooltip : MonoBehaviour
 {
-    public string message;
+    public static string Message;
 
     private void OnMouseEnter()
     {
-        TooltipManager._instance.setAndShowTooltip(message);
+        TooltipManager._instance.setAndShowTooltip(Message);
     }
 
     private void OnMouseExit()

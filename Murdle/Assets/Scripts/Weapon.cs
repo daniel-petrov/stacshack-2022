@@ -68,7 +68,7 @@ public class Weapon : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEn
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("OnDrag");
+        // Debug.Log("OnDrag");
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
     

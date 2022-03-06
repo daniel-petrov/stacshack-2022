@@ -75,8 +75,8 @@ public class WorldManager : MonoBehaviour {
             Motivation motivationScript = obj.GetComponent<Motivation>();
 
             motivationScript.Copy(motivation);
-            obj.GetComponent<RawImage>().texture = getImg("Assets/images_and_stuff/evidence_png/" + motivationScript.imageName);
-            // obj.GetComponent<RawImage>().texture = getImg("Assets/images_and_stuff/evidence_png/002-analysis.png");
+            // obj.GetComponent<RawImage>().texture = getImg("Assets/images_and_stuff/evidence_png/" + motivationScript.imageName);
+            obj.GetComponent<RawImage>().texture = getImg("Assets/images_and_stuff/evidence_png/002-analysis.png");
         }
 
         // -- TODO: Add slots --

@@ -22,10 +22,12 @@ public class Motivation : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
     
     public void Copy(Motivation motivation)
     {
-        this.imageName = motivation.imageName;
-        this.scale = motivation.scale;
-        this.emotion = motivation.emotion;
-        this.message = motivation.message;
+        imageName = motivation.imageName;
+        scale = motivation.scale;
+        emotion = motivation.emotion;
+        message = motivation.message;
+
+        Tooltip.Message = message;
     }
     
     /*

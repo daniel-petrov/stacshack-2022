@@ -3,15 +3,24 @@ using UnityEngine;
 
 public class GuessButtonBehaviour : MonoBehaviour
 {
+    public WeaponSlot weaponSlot;
+    public MotivationSlot motivationSlot;
+    public SuspectSlot suspectSlot;
+
+    public WorldManager worldManager;
 
     public void OnButtonPress()
     {
         Debug.Log("Guess Button Pressed!");
         
         // -- Get Each Object in Item Slots -- //
-        Weapon guessWeapon = GameObject.Find("Canvas/WeaponSlot").GetComponent<WeaponSlot>().weapon;
-        Motivation guessMotivation = GameObject.Find("Canvas/MotivationSlot").GetComponent<MotivationSlot>().motivation;
-        Suspect guessSuspect = GameObject.Find("Canvas/SuspectSlot").GetComponent<SuspectSlot>().suspect;
+        // Weapon guessWeapon = GameObject.Find("Canvas/WeaponSlot").GetComponent<WeaponSlot>().weapon;
+        // Motivation guessMotivation = GameObject.Find("Canvas/MotivationSlot").GetComponent<MotivationSlot>().motivation;
+        // Suspect guessSuspect = GameObject.Find("Canvas/SuspectSlot").GetComponent<SuspectSlot>().suspect;
+
+        Weapon guessWeapon = weaponSlot.weapon;
+        Motivation guessMotivation = motivationSlot.motivation;
+        Suspect guessSuspect = suspectSlot.suspect;
 
         // -- Perform Validations on Item Slots -- //
         if (guessWeapon == null || guessMotivation == null || guessSuspect == null) return;
@@ -19,7 +28,7 @@ public class GuessButtonBehaviour : MonoBehaviour
         // -- Check if Guess
 
         // -- Get Scenario Object from WorldManager -- //
-        Scenario scenario = GameObject.Find("World Manager").GetComponent<WorldManager>().scenario;
+        Scenario scenario = worldManager.scenario;
 
         // -- Get Distance Between each Item Slot and Scenario -- //
         double weaponDistance = guessWeapon.getDistance(scenario.correctWeapon) / Math.Sqrt(4*4*3);
@@ -31,6 +40,7 @@ public class GuessButtonBehaviour : MonoBehaviour
         Color motivationColour = getColourFromDistance(motivationDistance);
         Color suspectColour = getColourFromDistance(suspectDistance);
         
+        // TODO change slots' colours
     }
 
     private Color getColourFromDistance(double value)
