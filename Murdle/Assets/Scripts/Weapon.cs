@@ -47,7 +47,7 @@ public class Weapon : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEn
     }
 
     /* -- Unity Shtuff -- */
-    [SerializeField] private Canvas canvas;
+    public Canvas canvas;
     
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;

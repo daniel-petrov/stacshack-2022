@@ -1,23 +1,21 @@
-scale,motivation,message
-1,hatred,"You beat me at Mario Kart, now I hate you and you must die."
-2,revenge,"You took my pizza from me and that is unacceptable, I will now enact my revenge."
-3,betrayal,"You were my brother, Anakin! I loved you!"
-4,jealousy,"Jon Lewis gave you a 20, yet I got a 19! This is outrageous and only your death will satisfy me."
-5,humiliation,"If you get to destroy me in Wii Bowling, then I get to end your life."
-6,embarrassment,"Roses are red, knights can't lie. You took my clothes when I showered, now you will die."
-7,assassination,"I got paid to kill you. No hard feelings, but I need to pay for accommodation."
-8,debt,I'll get you your money! I just need some time! Do you take dogecoin?
-9,mercy killing,"You're a sad, strange little man. The world won't miss you."
-10,boredom,"Coursework is boring man, let me just kill you. It'll be more fun for the both of us."
-11,stupidity,"Dude, don't worry - you'll be fine. You can take it."
-12,hunger,"The Screamer burger and Peacock fries are great, but nothing satisfies my hunger quite like your body on a plate."
-13,lust,The world just couldn't handle your irresistable curves.
-14,passion,"This fire in my soul, the opera in my heart, the pizza in my stomach, your corpse on the floor. This is what makes life worth living."
-15,love,"I love you, and if I can't live with you then you can no longer live."
-16,rivalry,The CS labs aren't big enough for two grime lords. You had to go.
-17,ownership,"Hippity, hoppity, your life is my property."
-18,god complex,"I am a God, you dull creature. You shall feel my wrath after I win the hackathon."
-19,paranoia,"I saw you looking at me in Rector's. Why would you do that? Do you want to make love to me? Kill me? I can't live like this, and neither can you. Lmao."
-20,insanity,Yeah.. 13 red bulls and 20 hours of coding can do a lot of emotional damage. Had to channel it somewhere.
-,,
-,,
+scale;motivation;message
+1;hatred;"You beat me at Mario Kart, now I hate you and you must die."
+2;revenge;"You took my pizza from me and that is unacceptable, I will now enact my revenge."
+3;betrayal;"You were my brother, Anakin! I loved you!"
+4;jealousy;"Jon Lewis gave you a 20, yet I got a 19! This is outrageous and only your death will satisfy me."
+5;humiliation;"If you get to destroy me in Wii Bowling, then I get to end your life."
+6;embarrassment;"Roses are red, knights can't lie. You took my clothes when I showered, now you will die."
+7;assassination;"I got paid to kill you. No hard feelings, but I need to pay for accommodation."
+8;debt;"I'll get you your money! I just need some time! Do you take dogecoin?"
+9;mercy killing;"You're a sad, strange little man. The world won't miss you."
+10;boredom;"Coursework is boring man, let me just kill you. It'll be more fun for the both of us."
+11;stupidity;"Dude, don't worry - you'll be fine. You can take it."
+12;hunger;"The Screamer burger and Peacock fries are great, but nothing satisfies my hunger quite like your body on a plate."
+13;lust;"The world just couldn't handle your irresistable curves."
+14;passion;"This fire in my soul, the opera in my heart, the pizza in my stomach, your corpse on the floor. This is what makes life worth living."
+15;love;"I love you, and if I can't live with you then you can no longer live."
+16;rivalry;The CS labs aren't big enough for two grime lords. You had to go.
+17;ownership;"Hippity, hoppity, your life is my property."
+18;god complex;"I am a God, you dull creature. You shall feel my wrath after I win the hackathon."
+19;paranoia;"I saw you looking at me in Rector's. Why would you do that? Do you want to make love to me? Kill me? I can't live like this, and neither can you. Lmao."
+20;insanity;"Yeah.. 13 red bulls and 20 hours of coding can do a lot of emotional damage. Had to channel it somewhere."

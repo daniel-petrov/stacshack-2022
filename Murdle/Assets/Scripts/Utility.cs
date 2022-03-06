@@ -95,7 +95,7 @@ public class Utility
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
-                var values = line.Split(',');
+                var values = line.Split(';');
 
                 if (ignoreFirstLine) {
                     ignoreFirstLine = false;
@@ -104,7 +104,7 @@ public class Utility
                 
                 // Create New Motivation Object from CSV Properties
                 Motivation motivation = new Motivation(
-                    "002-analysis.png",
+                    "",
                     ToDouble(values[0]),
                     values[1],
                     values[2]

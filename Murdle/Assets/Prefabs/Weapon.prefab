@@ -64,8 +64,7 @@ MonoBehaviour:
   mass: 0
   activeness: 0
   sharpness: 0
-  img: {fileID: 0}
-  canvas: {fileID: 0}
+  canvas: {fileID: 2751630118072288830, guid: 5a1694929de1945a989b660261f8d634, type: 3}
 --- !u!225 &-1412759865592196791
 CanvasGroup:
   m_ObjectHideFlags: 0
