@@ -30,6 +30,10 @@ public class WorldManager : MonoBehaviour {
     private void Start() {
         scenario = GenerateScenario();
         
+        Debug.Log("length of scenario.weapons: " + scenario.weapons.Count);
+        Debug.Log("legnth of scenario.suspects: " + scenario.suspects.Count);
+        Debug.Log("legnth of scenario.motivations: " + scenario.motivations.Count);
+
         // TODO select a winning 3-tuple from scenario. So, a (weapon, suspect, motivation) which is the correct answer
         
         Random rnd = new Random();
@@ -69,9 +73,13 @@ public class WorldManager : MonoBehaviour {
             obj.transform.localPosition = new Vector3(rnd.Next(1, (int) sceneRect.rect.width), rnd.Next(1, (int) sceneRect.rect.height), 0f);
 
             Motivation motivationScript = obj.GetComponent<Motivation>();
+
             motivationScript.Copy(motivation);
-            obj.GetComponent<RawImage>().texture = getImg("Assets/images_and_stuff/evidence_png/002-analysis.png");
+            obj.GetComponent<RawImage>().texture = getImg("Assets/images_and_stuff/evidence_png/" + motivationScript.imageName);
+            // obj.GetComponent<RawImage>().texture = getImg("Assets/images_and_stuff/evidence_png/002-analysis.png");
         }
+
+        // -- TODO: Add slots --
     }
 
     private Scenario GenerateScenario() {
