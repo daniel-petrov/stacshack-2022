@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5573393746588449478}
   - component: {fileID: 3236721651304841939}
   - component: {fileID: 7955452718362917528}
-  - component: {fileID: 2712431426484198205}
+  - component: {fileID: 545556759240363330}
   m_Layer: 5
   m_Name: Motivation
   m_TagString: Untagged
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2712431426484198205
+--- !u!114 &545556759240363330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,8 +85,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5465030663089769579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 577cd16e521b8c143a90756a5bae0147, type: 3}
+  m_Script: {fileID: 11500000, guid: 80eb1c74860c5ba49a6ca8ab9a30f19d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localRectTransform: {fileID: 0}
-  motivation: {fileID: 0}

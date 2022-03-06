@@ -1,8 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 using Random = System.Random;
 
 public class WorldManager : MonoBehaviour {
@@ -10,12 +11,14 @@ public class WorldManager : MonoBehaviour {
     public GameObject suspectPrefab;
     public GameObject motivationPrefab;
     public Transform sceneTransform;
+    public RectTransform sceneRect;
 
     public int numWeapons = 20;
     public int numSuspects = 0;
     public int numMotivations = 5;
 
-    private const string BasePath = "assets/images_and_stuff/"; 
+    private const string CSVBasePath = "assets/images_and_stuff/"; 
+    private const string SpriteBasePath = "assets/Sprites/"; 
     
     private void Start() {
         Scenario scenario = GenerateScenario();
@@ -25,32 +28,38 @@ public class WorldManager : MonoBehaviour {
         Random rnd = new Random();
         
         foreach (var weapon in scenario.weapons) {
-            GameObject obj = Instantiate(weaponPrefab, new Vector3(rnd.Next(1,10) * 1f, rnd.Next(1,10) * 1f, 0f), new Quaternion(), sceneTransform);
+            GameObject obj = Instantiate(weaponPrefab, sceneRect);
+            obj.transform.localPosition = new Vector3(rnd.Next(1, (int) sceneRect.rect.width), rnd.Next(1, (int) sceneRect.rect.height), 0f);
             
             Weapon weaponScript = obj.GetComponent<Weapon>();
+            
             weaponScript.Copy(weapon);
+            obj.GetComponent<RawImage>().texture = getImg(SpriteBasePath + weaponScript.imageName);
         }
         
         foreach (var suspect in scenario.suspects) {
-            GameObject obj = Instantiate(suspectPrefab, new Vector3(rnd.Next(1,10) * 1f, rnd.Next(1,10) * 1f, 0f), new Quaternion(), sceneTransform);
+            GameObject obj = Instantiate(suspectPrefab, sceneRect);
+            obj.transform.localPosition = new Vector3(rnd.Next(1, (int) sceneRect.rect.width), rnd.Next(1, (int) sceneRect.rect.height), 0f);
             
             Suspect suspectScript = obj.GetComponent<Suspect>();
             suspectScript.Copy(suspect);
+            // obj.GetComponent<RawImage>().texture = getImg(SpriteBasePath + suspectScript.imageName);
         }
 
         foreach (var motivation in scenario.motivations) {
-            GameObject obj = Instantiate(motivationPrefab, new Vector3(rnd.Next(1, 10) * 1f, rnd.Next(1, 10) * 1f, 0f),
-                new Quaternion(), sceneTransform);
+            GameObject obj = Instantiate(motivationPrefab, sceneTransform);
+            obj.transform.localPosition = new Vector3(rnd.Next(1, (int) sceneRect.rect.width), rnd.Next(1, (int) sceneRect.rect.height), 0f);
 
             Motivation motivationScript = obj.GetComponent<Motivation>();
             motivationScript.Copy(motivation);
+            // obj.GetComponent<RawImage>().texture = getImg(SpriteBasePath + motivation.imageName);
         }
     }
 
     private Scenario GenerateScenario() {
-        string weaponsFile = BasePath + "weapon_attributes.csv";
+        string weaponsFile = CSVBasePath + "weapon_attributes.csv";
         string suspectsFile = "suspect_attributes.csv";
-        string motivationsFile = BasePath + "motivations_messages.csv";
+        string motivationsFile = CSVBasePath + "motivations_messages.csv";
     
         // -- Get List of All Possible Scenario Objects -- //
         List<Weapon> allWeapons = Utility.getWeaponsFromCSV(weaponsFile);
@@ -111,5 +120,17 @@ public class WorldManager : MonoBehaviour {
         
         return new Scenario(weaponList, suspectList, motivationList);
     }
-    
+
+    private Texture2D getImg(string path) {
+        // read image and store in a byte array
+        byte[] byteArray = File.ReadAllBytes(path);
+        
+        //create a texture and load byte array to it
+        Texture2D sampleTexture = new Texture2D(2,2);
+        
+        // the size of the texture will be replaced by image size
+        bool isLoaded = sampleTexture.LoadImage(byteArray);
+        
+        return isLoaded ? sampleTexture : null;
+    }
 }
